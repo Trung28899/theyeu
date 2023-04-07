@@ -1,0 +1,12 @@
+.container {
+  width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100vw;
+    overflow-y: scroll;
+  }
+}
