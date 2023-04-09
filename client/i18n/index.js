@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { LanguageCodeSupport } from "./options";
 
-const fileNames = ["view"];
+const fileNames = ["view", "login", "general"];
 let languageObject = {};
 
 LanguageCodeSupport.forEach((language) => {

@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from "react";
 import classes from "./Button.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "yellow" | "pink" | "blue" | "outline";
+  variant?: "default" | "yellow" | "pink" | "blue" | "purple" | "outline";
   size?: "small" | "medium" | "large";
 }
 

@@ -15,7 +15,7 @@
 
 @mixin backGroundColor() {
   background: $pink;
-  background: linear-gradient(140deg, $light_grey 0%, $navy_blue 121.92%);
+  background: linear-gradient(140deg, $light_grey 0%, $pink 121.92%);
 }
 
 @mixin pageContainer() {

@@ -13,8 +13,10 @@ import { authenticateUser } from "../api/api";
 import { useRedux } from "@/store/useRedux";
 import useLoading from "@/modules/common/hooks/useLoading";
 import { authenticate } from "@/store/reducers/authReducer";
+import { useTranslation } from "react-i18next";
 
 function FormContainers() {
+  const { t: translate } = useTranslation();
   const { errors, setErrors, resetError } = useHandleErrors();
   const router = useRouter();
   const { dispatch } = useRedux();
@@ -35,7 +37,7 @@ function FormContainers() {
     } catch (error: any) {
       const errorMessage = error.response?.data?.errorDetails || "";
       if (errorMessage) toastError(errorMessage);
-      if (!errorMessage) toastError("An error has occured");
+      if (!errorMessage) toastError(translate("general.errors.generalError"));
       endLoading();
     }
   }
@@ -47,9 +49,9 @@ function FormContainers() {
 
   return (
     <form className={classes.container} onSubmit={formik.handleSubmit}>
-      <p className={classes.title}>Account Login</p>
+      <p className={classes.title}>{translate("login.title")}</p>
       <Input
-        placeholder="Enter username"
+        placeholder={translate("login.userNamePlaceHolder") || ""}
         id="username"
         error={errors.username}
         resetError={resetError}
@@ -57,7 +59,7 @@ function FormContainers() {
         {...formik.getFieldProps("username")}
       />
       <Input
-        placeholder="Enter passsword"
+        placeholder={translate("login.passwordPlaceHolder") || ""}
         id="password"
         error={errors.password}
         resetError={resetError}
@@ -66,13 +68,13 @@ function FormContainers() {
       />
 
       <Button
-        variant="blue"
+        variant="purple"
         size="medium"
         type="submit"
         data-testid="login-submit"
         className={classes.button}
       >
-        Sign In
+        {translate("login.button.login")}
       </Button>
     </form>
   );

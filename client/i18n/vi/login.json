@@ -1,0 +1,8 @@
+{
+  "title": "Đăng Nhập",
+  "userNamePlaceHolder": "Nhập tên người dùng",
+  "passwordPlaceHolder": "Nhập mật khẩu",
+  "button": {
+    "login": "Đăng Nhập"
+  }
+}

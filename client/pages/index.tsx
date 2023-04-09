@@ -1,7 +1,7 @@
-import View from "@/modules/view/View";
+import Auth from "@/modules/authentication/Auth";
 
 const Home: React.FC = () => {
-  return <View />;
+  return <Auth />;
 };
 
 export default Home;
